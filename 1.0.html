@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Zanpakuto</title>
+<style>
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  color: rgb(218, 8, 8);
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.3);
+  z-index: 0;
+}
+
+.description {
+  color: #ff6666;
+}
+
+#upi {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  border: 2px solid black;
+  padding: 10px;
+  background-color: rgb(22, 22, 22); /* plein blanc, opaque */
+  text-align: left;
+  z-index: 1;
+}
+</style>
+</head>
+<body>
+
+
+<video autoplay muted loop playsinline id="bg-video">
+  <source src="Bleach.mp4" type="video/mp4">
+
+</video>
+
+<h1 title="Zanpakuto">Zanpakuto</h1>
+<p class="description">Soul Reaper's weapon.</p>
+
+<a href="https://www.youtube.com/watch?v=XKJP_0qwxMw">Go to Zanpakuto page</a><br>
+<img src="https://i.ytimg.com/vi/XKJP_0qwxMw/hqdefault.jpg" width="300">
+
+<h2>Release</h2>
+<h3>Shikai</h3>
+<a href="https://www.youtube.com/watch?v=jGrwrkAwlZw">Go to Shikai page</a><br>
+<img src="https://i.ytimg.com/vi/jGrwrkAwlZw/hqdefault.jpg" width="300">
+
+<h3>Zangetsu</h3>
+<p>Most powerful Zanpakuto.</p>
+<a href="https://www.youtube.com/watch?v=t72rEBBODco">Go to Zangetsu page</a><br>
+<img src="https://i.ytimg.com/vi/t72rEBBODco/hqdefault.jpg" width="300">
+
+<h2>Final Form</h2>
+<h3>Bankai</h3>
+<p>Ultimate form of Zanpakuto.</p>
+<a href="https://www.youtube.com/watch?v=0Q1aF3uGX7I">Go to Bankai page</a><br>
+<img src="https://i.ytimg.com/vi/0Q1aF3uGX7I/hqdefault.jpg" width="300">
+
+<hr>
+
+<div id="upi">
+  <h2>Choose a form</h2>
+  <select id="form">
+    <option value="">-- Select --</option>
+    <option value="Shikai">Shikai</option>
+    <option value="Bankai">Bankai</option>
+    <option value="Tensa Zangetsu">Tensa Zangetsu</option>
+  </select>
+  <button onclick="showForm()">Validate</button>
+  <p id="result"></p>
+</div>
+
+<script>
+function showForm() {
+  let form = document.getElementById("form").value;
+  let text = "";
+
+  if (form === "Shikai") {
+    text = "Shikai is the released form of a Zanpakuto.";
+  } else if (form === "Bankai") {
+    text = "Bankai is the final and most powerful form.";
+  } else if (form === "Tensa Zangetsu") {
+    text = "Tensa Zangetsu is Ichigo's strongest form.";
+  } else {
+    text = "Please select a form.";
+  }
+
+  document.getElementById("result").textContent = text;
+}
+</script>
+
+</body>
+</html>
